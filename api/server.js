@@ -12,7 +12,7 @@ const server = express();
 //   }), helmet(), express.json());
 
 // Routers
-// const authRouter = require("../routers/auth");
+const authRouter = require("../routers/auth");
 // const usersRouter = require("../routers/users-router");
 // const testRouter = require("../routers/token-tester")
 
