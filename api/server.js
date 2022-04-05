@@ -17,7 +17,7 @@ const authRouter = require("../routers/auth");
 // const testRouter = require("../routers/token-tester")
 
 // API Endpoints
-// server.use("/api/auth", authRouter);
+server.use("/api/auth", authRouter);
 // server.use("/api/users", usersRouter);
 // server.use("/api/test", testRouter);
 
