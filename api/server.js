@@ -1,11 +1,28 @@
+// Dependencies
 const express = require('express');
+const helmet = require('helmet');
+const cors = require('cors');
 
+// Server Instance
 const server = express();
+
+// Library Middleware
+// server.use(cors({
+//     origin: '*'
+//   }), helmet(), express.json());
+
+// Routers
+const authRouter = require("../routers/auth");
+// const usersRouter = require("../routers/users-router");
+// const testRouter = require("../routers/token-tester")
+
+// API Endpoints
+server.use("/api/auth", authRouter);
+// server.use("/api/users", usersRouter);
+// server.use("/api/test", testRouter);
 
 server.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-// once the server is fully configured we can have it "listen" for connections on a particular "port"
-// the callback function passed as the second argument will run once when the server starts
-server.listen(8000, () => console.log('API running on port 8000'));
+module.exports = server;
