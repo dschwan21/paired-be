@@ -6,9 +6,24 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: "pg",
     connection: {
-      filename: './dev.sqlite3'
+      host: "localhost",
+      port: 5432,
+      database: "paired",
+      user: "postgres", 
+      password: "schwantner" 
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: './data/migrations'
+    },
+    seeds: {
+      directory: './data/seeds'
     }
   },
 
