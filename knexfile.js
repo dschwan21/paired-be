@@ -60,6 +60,25 @@ module.exports = {
     seeds: {
       directory: './data/seeds'
     }
+  },
+  renderdb: {
+    client: 'pg',
+    connection: {
+      host: process.env.DATABASE_URL,
+      port: 5432,
+      database: "paired_db",
+      user: "derek", 
+      password: process.env.DB_PASSWORD
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      directory: './data/migrations'
+    },
+    seeds: {
+      directory: './data/seeds'
+    }
   }
-
 };
